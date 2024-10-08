@@ -1,0 +1,20 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-pri);
+  font-size: 16px;
+  line-height: 1.55;
+  font-weight: 400;
+  color: #505050;
+  overflow: hidden auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

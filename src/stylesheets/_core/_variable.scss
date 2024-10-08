@@ -1,0 +1,22 @@
+:root {
+  --font-pri: font-family: 'Noto_Sans_JP', sans-serif;
+  --size-hd: 10rem;
+}
+
+$color-bg: #ffffff;
+$color-text: #333333;
+
+$color-pri: #42a7c2;
+$color-second: #eaf1f7;
+$color-third: #e1e8ef;
+$color-four: #7b7b7b;
+$color-five: #afafaf;
+$color-six: #ced4da;
+$color-seven: #ced4da;
+$color-eight: #f8f9fa;
+
+@mixin max($value) {
+  @media screen and (max-width: $value) {
+    @content;
+  }
+}

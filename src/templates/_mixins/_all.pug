@@ -1,0 +1,36 @@
+mixin priInput(label, type, name, placeholder)
+  if type == "password"
+    .pri-input
+      label(for=name)= label
+      .box-input
+        input.style-input(type=type, name=name, placeholder=placeholder)
+        .show-pass
+  else if type == "search"
+    .pri-input
+      label(for=name)= label
+      .box-input
+        input.style-input(type='text', name=name, placeholder=placeholder)
+        .search
+  else if type === "date"
+    .pri-input
+      label(for=name)= label
+      .box-input
+        input#date.style-input(type=type, name=name, placeholder=placeholder)
+        .date
+  else
+    .pri-input
+      label(for=name)= label
+      input.style-input(type=type, name=name, placeholder=placeholder)
+
+mixin priDropdown(listItem, label, placeholder, name)
+  .select-box
+    label(for=name)= label
+    select.re-select-main(name=name)
+      option.hidden(value='default')= placeholder
+      each item, index in listItem
+        option(value=index)= `${item}`
+
+mixin priTextArea(label, placeholder)
+  .pri-textarea
+    label(for='area')= label
+    textarea(placeholder=placeholder)

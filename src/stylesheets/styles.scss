@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+//Core
+@import '_core/reset';
+@import '_core/variable';
+@import '_core/fonts';
+@import '_core/base';
+
+//Modules
+@import '_modules/mixin';
+
+//Components
+@import '_components/button';
+@import '_components/input';
+
+//Partials
+@import '_partials/header';
+@import '_partials/footer';
+
+//Layouts
+@import '_layouts/flex';
+@import '_layouts/grid';
+
+//Pages
+@import '_pages/dashboard';

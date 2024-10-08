@@ -1,0 +1,95 @@
+/*------------------------------------------------------------
+	Clearfix
+------------------------------------------------------------*/
+@mixin clear {
+  *zoom: 1;
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+/*------------------------------------------------------------
+	Font
+------------------------------------------------------------*/
+@mixin noto_san_jp_font() {
+  font-family: 'Noto_Sans_JP', sans-serif;
+}
+
+/*------------------------------------------------------------
+	Media
+------------------------------------------------------------*/
+@mixin max($point) {
+  @media screen and (max-width: $point) {
+    @content;
+  }
+}
+@mixin min($point) {
+  @media screen and (min-width: $point) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: #{$breakpoint1}) {
+    @content;
+  }
+}
+@mixin pc {
+  @media screen and (min-width: #{$breakpoint2}) {
+    @content;
+  }
+}
+@mixin min-sp {
+  @media screen and (min-width: #{$point}) {
+    @content;
+  }
+}
+
+@mixin tab-land {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin tab-port {
+  @media screen and (max-width: 960px) {
+    @content;
+  }
+}
+@mixin tab-mini {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+/*------------------------------------------------------------
+	Flex Box
+------------------------------------------------------------*/
+@mixin flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+@mixin flex-icenter {
+  display: flex;
+  align-items: center;
+}
+@mixin flex-jcenter {
+  display: flex;
+  justify-content: center;
+}
+@mixin flex-jbetween {
+  display: flex;
+  justify-content: space-between;
+}
+@mixin bgimg($cover: cover, $position: center, $no-repeat: no-repeat) {
+  background-size: $cover;
+  background-repeat: $no-repeat;
+  background-position: $position;
+}
