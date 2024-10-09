@@ -1,1 +1,21 @@
 extends _layouts/_default
+
+block vars
+  - title = 'AGL | Dashboard'
+  - description = ''
+  - keywords = ''
+  - og_title = ''
+  - url = ''
+  - pageID = 'dashboard'
+  - path = '.'
+
+block scripts
+
+block container
+  .wrapper
+    .container
+      .row
+        .col-12
+          h1 Dashboard
+          p Welcome to the dashboard
+          +NavigationList(nav)

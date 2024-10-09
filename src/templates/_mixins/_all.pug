@@ -1,17 +1,17 @@
-mixin priInput(label, type, name, placeholder)
-  if type == "password"
+mixin PriInput(label, type, name, placeholder)
+  if type == 'password'
     .pri-input
       label(for=name)= label
       .box-input
         input.style-input(type=type, name=name, placeholder=placeholder)
         .show-pass
-  else if type == "search"
+  else if type == 'search'
     .pri-input
       label(for=name)= label
       .box-input
         input.style-input(type='text', name=name, placeholder=placeholder)
         .search
-  else if type === "date"
+  else if type === 'date'
     .pri-input
       label(for=name)= label
       .box-input
@@ -22,15 +22,13 @@ mixin priInput(label, type, name, placeholder)
       label(for=name)= label
       input.style-input(type=type, name=name, placeholder=placeholder)
 
-mixin priDropdown(listItem, label, placeholder, name)
-  .select-box
-    label(for=name)= label
-    select.re-select-main(name=name)
-      option.hidden(value='default')= placeholder
-      each item, index in listItem
-        option(value=index)= `${item}`
+//- - var navigationData = [ { title: 'Home', link: '/' }, { title: 'About', link: '/about' }, { title: 'Contact', link: '/contact' } ];
 
-mixin priTextArea(label, placeholder)
-  .pri-textarea
-    label(for='area')= label
-    textarea(placeholder=placeholder)
+mixin NavigationList(items)
+  ul.navigation
+    each item in items.length ? items : ['There are no items']
+      li.navigation-item
+        a.item-title(href=item.link, target='_self', title=item.title)= item.title
+        if item.icon !== undefined && item.icon !== ''
+          span.item-icon
+            img(src=item.icon, alt=item.title)

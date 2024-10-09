@@ -4,10 +4,14 @@ const pug = require('gulp-pug')
 const sass = require('gulp-sass')
 const sourcemaps = require('gulp-sourcemaps')
 const path = require('path')
+const swig = require('gulp-swig')
+const data = require('gulp-data')
+const fs = require('fs-extra')
+
 const browserSync = require('browser-sync').create()
 
 function copyAsset() {
-  return gulp.src(['src/assets/**/*']).pipe(gulp.dest('./dist/assets'))
+  return gulp.src(['src/assets/**/*', '!src/assets/data/data.json']).pipe(gulp.dest('./dist/assets'))
 }
 
 function cleanSource() {
@@ -16,13 +20,15 @@ function cleanSource() {
 
 //compile scss into css
 function style() {
-  return gulp
-    .src('src/stylesheets/**/*.scss')
-    .pipe(sourcemaps.init())
-    .pipe(sass().on('error', sass.logError))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/assets/css'))
-    .pipe(browserSync.stream())
+  return (
+    gulp
+      .src('src/stylesheets/**/*.scss')
+      .pipe(sourcemaps.init())
+      .pipe(sass().on('error', sass.logError))
+      // .pipe(sourcemaps.write())
+      .pipe(gulp.dest('./dist/assets/css'))
+      .pipe(browserSync.stream())
+  )
 }
 
 //compile jade into html
@@ -34,6 +40,11 @@ function html() {
       '!src/templates/_partials/*.pug',
       '!src/templates/_mixins/*.pug',
     ])
+    .pipe(
+      data(function (file) {
+        return JSON.parse(fs.readFileSync('./src/assets/data/data.json', 'utf-8'))
+      }),
+    )
     .pipe(
       pug({
         doctype: 'html',
@@ -52,8 +63,8 @@ function watch() {
     port: 4000,
   })
   gulp.watch('src/assets/**/*', copyAsset).on('change', browserSync.reload)
-  gulp.watch('src/scss/**/*.scss', style).on('change', browserSync.reload)
-  gulp.watch('src/pug/**/*.pug', html).on('change', browserSync.reload)
+  gulp.watch('src/stylesheets/**/*.scss', style).on('change', browserSync.reload)
+  gulp.watch('src/templates/**/*.pug', html).on('change', browserSync.reload)
 }
 
 // define complex tasks

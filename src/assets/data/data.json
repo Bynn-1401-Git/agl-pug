@@ -1,0 +1,9 @@
+{
+  "nav": [
+    { "title": "検査結果画面の解説", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
+    { "title": "主な機能", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
+    { "title": "利用シーン別ガイド", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
+    { "title": "初めてご利用の方へ", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
+    { "title": "FAQ", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" }
+  ]
+}

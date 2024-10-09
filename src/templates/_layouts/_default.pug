@@ -1,10 +1,10 @@
 include ../_mixins/_all
 
 block vars
-  - title = ''
-  - description = ''
-  - keywords = ''
-  - og_title = ''
+  - title = 'AGL'
+  - description = 'AGL'
+  - keywords = 'AGL'
+  - og_title = 'AGL'
   - url = ''
   - pageID = ''
   - path = '.'
@@ -15,11 +15,23 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(name='description', content=description)
+    meta(name='keywords', content=keywords)
+    meta(property='og:title', content=og_title)
+    meta(property='og:url', content=url)
+    meta(property='og:image', content='./assets/images/common/logo/agl-logo.png')
+    meta(property='og:description', content=description)
+    meta(property='og:type', content='website')
+    link(rel='preconnect', href='https://fonts.googleapis.com')
+    link(rel='preconnect', href='https://fonts.gstatic.com', crossorigin)
+    link(href='https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap', rel='stylesheet')
     link(rel='stylesheet', href='./assets/css/styles.css')
-    title Template
+    link(rel='icon', type='image/png', href='./assets/images/common/logo/agl-logo.png', sizes='16x16')
+    title= title
   body(class=pageID)
     include ../_partials/_header
     main.main
       block container
     include ../_partials/_footer
+    script(src='./assets/js/main.js', type='module', defer)
     block scripts

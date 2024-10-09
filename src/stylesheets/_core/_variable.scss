@@ -1,11 +1,21 @@
 :root {
-  --font-pri: font-family: 'Noto_Sans_JP', sans-serif;
+  --font-pri: 'Noto Sans JP', sans-serif;
   --size-hd: 10rem;
+  --size-lg: 5rem;
+  --size-md: 2.5rem;
+  --size-sm: 1.25rem;
+  --size-xs: 0.625rem;
+  --size-xxs: 0.3125rem;
 }
 
+// Color
 $color-bg: #ffffff;
-$color-text: #333333;
+$color-bg-dark: #333333;
 
+$color-text: #ffffff;
+$color-text-dark: #333333;
+
+// Color Palette
 $color-pri: #42a7c2;
 $color-second: #eaf1f7;
 $color-third: #e1e8ef;
@@ -14,6 +24,10 @@ $color-five: #afafaf;
 $color-six: #ced4da;
 $color-seven: #ced4da;
 $color-eight: #f8f9fa;
+
+// Breakpoint
+$breakpoint1: 767px;
+$breakpoint2: 768px;
 
 @mixin max($value) {
   @media screen and (max-width: $value) {
