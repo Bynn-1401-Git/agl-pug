@@ -1,9 +1,9 @@
 mixin AGLButton(label, type, name, size='fit')
   if size === 'fit'
-    button.btn(type=type, name=name)
+    button.btn(type=type, name=name, title=name, aria-label=name)
       span.btn__title= label
   else
-    button.btn__full(type=type, name=name)
+    button.btn__full(type=type, name=name, title=name, aria-label=name)
       span.btn__title= label
 
 <!-- Navigation -->

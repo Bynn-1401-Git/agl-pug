@@ -87,6 +87,7 @@
             gap: 20px;
             padding: 0;
           }
+
           padding-top: 20px !important;
 
           @include min($breakpoint-sm) {
@@ -141,14 +142,18 @@
           .box__btn {
             width: 100%;
             padding: 0 1rem;
+
             // margin-bottom: 10px;
             .btn__full {
-              padding: 8px 6px;
+              padding: 10px;
               font-size: 18px;
               text-align: center;
+
               span.btn__title {
                 letter-spacing: 1.8px;
                 font-size: 1em;
+                line-height: 18px;
+                font-weight: 700;
               }
 
               &:hover {
@@ -165,6 +170,7 @@
           //Navigation
           .navigation__wrapper {
             width: 100%;
+
             ul.menu__list {
               box-sizing: border-box;
               list-style: none;
@@ -181,6 +187,7 @@
               li.menu__item {
                 overflow: hidden;
                 position: relative;
+
                 &::marker {
                   display: none;
                 }
@@ -224,6 +231,7 @@
                   span.item__icon {
                     flex-grow: 2;
                     flex-shrink: 0;
+
                     img {
                       float: right;
                     }
@@ -247,6 +255,7 @@
           font-size: 14px;
           margin-bottom: 10px;
           align-items: flex-start;
+
           // flex-direction: column;
           @include min($breakpoint-sm) {
             flex-wrap: wrap;
@@ -267,13 +276,16 @@
 
           .nav__left {
             float: left;
+
             .agl__item.item__link {
               font-size: 1em;
               line-height: 20px;
             }
           }
+
           .nav__right {
             float: right;
+
             .flexbox__container {
               gap: 0px;
               flex-direction: row;
@@ -473,6 +485,7 @@
                   object-fit: contain;
                   aspect-ratio: 1/1;
                 }
+
                 .search_bar__input {
                   width: 100%;
                   height: 21px;
@@ -480,6 +493,7 @@
                   border: none;
                   display: block;
                   font-size: 1rem;
+
                   &::placeholder {
                     color: var(--agl-gray-dark);
                   }
@@ -494,6 +508,7 @@
 
             .search_bar__submit {
               width: 100%;
+
               @include min($breakpoint-sm) {
                 width: 100%;
               }
@@ -516,6 +531,7 @@
                 min-height: 50px;
                 padding: 10px 30px;
                 width: 100%;
+
                 @include min($breakpoint-sm) {
                   padding: 10px 30px;
                   width: 100%;
@@ -546,6 +562,7 @@
                 }
 
                 border-radius: 10px;
+
                 span.btn__title {
                   font-size: 1rem;
                   font-family: var(--agl-font-family);
@@ -560,6 +577,7 @@
 
         section.section__wrapper {
           background-color: var(--agl-white);
+
           .section__container {
             width: 100%;
             display: flex;
@@ -834,41 +852,36 @@
         // Override section features
         section.section__wrapper.features {
           .section__container {
-            .header__wrapper {
-            }
+            .header__wrapper {}
 
-            .content__wrapper {
-            }
+            .content__wrapper {}
           }
         }
 
         // Override section report intro
         section.section__wrapper.report-intro {
           .section__container {
-            .header__wrapper {
-            }
+            .header__wrapper {}
 
-            .content__wrapper {
-            }
+            .content__wrapper {}
           }
         }
 
         // Override section menu list
         section.section__wrapper.menu-list {
           .section__container {
-            .header__wrapper {
-            }
+            .header__wrapper {}
 
             .content__wrapper {
               .grid__wrapper.grid__two {
                 .item {
-                  .item__header {
-                  }
+                  .item__header {}
 
                   .item__content {
                     ul.menu__list {
                       li.menu__item {
                         width: 100%;
+
                         a.menu__link {
                           display: inline-block;
                           text-align: left;

@@ -1,8 +1,6 @@
 'use strict'
 
 if (typeof window !== 'undefined') {
-  // This will only run in the browser.
-  console.log('Hello from the browser!')
   window.addEventListener('DOMContentLoaded', () => {
     const btnMenu = document.querySelector('#menu__btn_hamburger')
     const menuList = document.querySelector('#menu__list')
@@ -16,7 +14,7 @@ if (typeof window !== 'undefined') {
       if (window.scrollY > 120) {
         window.scrollTo({
           top: 0,
-          behavior: 'smooth', // Cuộn mượt
+          behavior: 'smooth',
         })
         menuList.classList.add('open__menu')
       } else {
