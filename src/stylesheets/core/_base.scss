@@ -5,29 +5,12 @@
 }
 
 html {
-  font-size: 16px;
-  font-family: var(--font-pri) !important;
+  font-size: var(--agl-font-base);
+  font-family: var(--agl-font-family) !important;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
   scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-pri) !important;
-  font-size: 16px;
-  line-height: 1.55;
-  font-weight: 400;
-  color: $color-text-dark;
-  overflow: hidden auto;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
 }
 
 button,
@@ -52,27 +35,8 @@ textarea {
   appearance: none;
 }
 
-.main {
+#main-content {
   transition: 0.3s ease-in-out;
-}
-
-.section {
-  padding: 5rem 0;
-}
-
-.container {
-  width: 100%;
-  max-width: 1240px;
-  height: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
-.wrapper {
-  width: 100%;
-  height: 100%;
-  background-color: $color-bg;
-  padding: 2rem 1rem;
 }
 
 .no-scroll {

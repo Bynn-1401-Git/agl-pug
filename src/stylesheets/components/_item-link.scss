@@ -1,0 +1,37 @@
+.agl__item.item__link {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 24px;
+  letter-spacing: 0px;
+  opacity: 1;
+  gap: 10px;
+  color: var(--agl-gray-dark);
+  font-size: 1rem;
+
+  &:hover {
+    color: darken($font-color-secondary, 10%);
+  }
+
+  &:focus {
+    color: darken($font-color-secondary, 10%);
+  }
+
+  // .item__title {
+  //   flex-grow: 1;
+  // }
+
+  .item__icon {
+    img {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      object-fit: contain;
+      aspect-ratio: 1/1;
+    }
+  }
+}

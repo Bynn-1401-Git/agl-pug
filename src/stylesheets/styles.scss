@@ -1,24 +1,22 @@
 @charset "UTF-8";
 
-//Core
-@import '_core/variable';
-@import '_core/reset';
-@import '_core/base';
+@import 'utils/variables';
+@import 'utils/mixins';
 
-//Modules
-@import '_modules/mixin';
+@import 'core/reset';
+@import 'core/base';
+@import 'core/typography';
 
-//Components
-@import '_components/button';
-@import '_components/input';
+@import 'components/button';
+@import 'components/item-link';
+@import 'components/sub-title';
 
-//Partials
-@import '_partials/header';
-@import '_partials/footer';
+@import 'layouts/wrapper';
+@import 'layouts/flex';
+@import 'layouts/grid';
 
-//Layouts
-@import '_layouts/flex';
-@import '_layouts/grid';
+@import 'partials/sidebar';
+@import 'partials/header';
+@import 'partials/footer';
 
-//Pages
-@import '_pages/dashboard';
+@import 'pages/dashboard';

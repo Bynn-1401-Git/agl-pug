@@ -1,0 +1,37 @@
+:root {
+  // font primary
+  --agl-font-family: 'Noto Sans JP', sans-serif;
+
+  // Font sizes
+  --agl-font-size-base: 16px;
+  --agl-font-size-lg: 18px;
+  --agl-font-size-sm: 14px;
+
+  // Color Palette
+  --agl-blue-primary: #42a7c2;
+  --agl-white: #ffffff;
+  --agl-black: #333333;
+  --agl-gray: #eaf1f7;
+  --agl-gray-light: #e1e8ef;
+  --agl-gray-dark: #7b7b7b;
+  --agl-gray-darker: #afafaf;
+  --agl-gray-darkest: #ced4da;
+  --agl-gray-lightest: #f8f9fa;
+
+  // Z-index
+  --agl-z-index-1: 100;
+  --agl-z-index-2: 200;
+  --agl-z-index-3: 300;
+  --agl-z-index-4: 400;
+  --agl-z-index-5: 500;
+  --agl-z-index-6: 600;
+  --agl-z-index-7: 700;
+  --agl-z-index-8: 800;
+  --agl-z-index-9: 900;
+
+  // Border radius
+  --agl-border-radius: 5px;
+
+  // Box shadow
+  --agl-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}

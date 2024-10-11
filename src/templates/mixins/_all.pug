@@ -1,0 +1,39 @@
+mixin AGLButton(label, type, name, size='fit')
+  if size === 'fit'
+    button.btn(type=type, name=name)
+      span.btn__title= label
+  else
+    button.btn__full(type=type, name=name)
+      span.btn__title= label
+
+<!-- Navigation -->
+mixin AGLNavigation(items)
+  nav.navigation__wrapper
+    ul.menu__list
+      each item in items.length ? items : ['There are no items']
+        li.menu__item
+          a.item__link(href=item.link, target='_self', title=item.title)
+            span.item__title= item.title
+            if item.icon !== undefined && item.icon !== ''
+              span.item__icon
+                img(src=item.icon, alt=item.title)
+
+<!--  -->
+mixin AGLNavLink(name='', icon='', position=0)
+  a.agl__item.item__link(href='#', target='_self', title=name)
+    if icon !== undefined && icon !== ''
+      case position
+        when 0
+          span.item__icon.item__icon--left
+            img(src=path + icon, alt=name)
+          span.item__title= name
+          - break
+        when 1
+          span.item__title= name
+          span.item__icon.item__icon--right
+            img(src=path + icon, alt=name)
+          - break
+        default
+          span.item__icon.item__icon--left
+            img(src=path + icon, alt=name)
+          span.item__title= name

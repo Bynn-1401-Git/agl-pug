@@ -1,0 +1,15 @@
+.group__field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+  }
+}

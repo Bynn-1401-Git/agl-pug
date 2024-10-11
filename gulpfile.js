@@ -36,9 +36,9 @@ function html() {
   return gulp
     .src([
       'src/templates/**/*.pug',
-      '!src/templates/_layouts/*.pug',
-      '!src/templates/_partials/*.pug',
-      '!src/templates/_mixins/*.pug',
+      '!src/templates/layouts/*.pug',
+      '!src/templates/partials/*.pug',
+      '!src/templates/mixins/*.pug',
     ])
     .pipe(
       data(function (file) {

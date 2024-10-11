@@ -1,0 +1,130 @@
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Font colors
+$font-color-primary: #42a7c2;
+$font-color-secondary: #333333;
+
+//Colors
+$color-primary: #42a7c2;
+$color-secondary: #333333;
+$color-tertiary: #eaf1f7;
+
+// Font sizes
+$font-size-base: 16px;
+$font-size-lg: 18px;
+$font-size-sm: 14px;
+
+// Spacing
+$spacing-unit: 8px;
+
+body {
+  font-family: var(--agl-font-family) !important;
+  font-size: $font-size-base;
+  line-height: 1.55;
+  font-weight: 400;
+  font-optical-sizing: auto;
+  color: var(--agl-black);
+  overflow: hidden auto;
+  transition: all 0.3s ease;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: $spacing-unit;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+p {
+  margin-bottom: $spacing-unit;
+}
+
+a {
+  color: var(--agl-blue-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: darken($font-color-primary, 10%);
+    text-decoration: underline;
+  }
+}
+
+ul,
+ol {
+  margin-bottom: $spacing-unit;
+  padding-left: $spacing-unit * 2;
+}
+
+strong,
+b {
+  font-weight: 700;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+// Responsive typography
+@media (max-width: $breakpoint-md) {
+  body {
+    font-size: $font-size-sm;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5,
+  h6 {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,83 @@
+/*------------------------------------------------------------
+	Clearfix
+------------------------------------------------------------*/
+@mixin clear {
+  *zoom: 1;
+  &:after {
+    display: block;
+    content: '';
+    clear: both;
+  }
+}
+
+/*------------------------------------------------------------
+	Font
+------------------------------------------------------------*/
+@mixin f-noto_sans_jp() {
+  font-family: var(--agl-font-family);
+}
+
+/*------------------------------------------------------------
+	Media
+------------------------------------------------------------*/
+@mixin max($point) {
+  @media screen and (max-width: $point) {
+    @content;
+  }
+}
+@mixin min($point) {
+  @media screen and (min-width: $point) {
+    @content;
+  }
+}
+@mixin between($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}
+
+/*------------------------------------------------------------
+  Transition
+------------------------------------------------------------*/
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease-in-out, $delay: 0s) {
+  transition: $property $duration $timing-function $delay;
+}
+
+/*------------------------------------------------------------
+  Transform
+------------------------------------------------------------*/
+@mixin transform($property) {
+  transform: $property;
+  -webkit-transform: $property;
+  -moz-transform: $property;
+  -ms-transform: $property;
+  -o-transform: $property;
+}
+
+/*------------------------------------------------------------
+  Transition
+------------------------------------------------------------*/
+@mixin transition($property: all, $duration: 0.3s, $timing-function: ease-in-out, $delay: 0s) {
+  transition: $property $duration $timing-function $delay;
+  -moz-transition: $property $duration $timing-function $delay;
+  -webkit-transition: $property $duration $timing-function $delay;
+  -o-transition: $property $duration $timing-function $delay;
+}
+
+/*------------------------------------------------------------
+  Box Shadow
+------------------------------------------------------------*/
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+/*------------------------------------------------------------
+  Border Radius
+------------------------------------------------------------*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+}

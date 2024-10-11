@@ -1,0 +1,23 @@
+.btn {
+  background-color: var(--agl-blue-primary);
+  color: #fff;
+  padding: 10px;
+  width: fit-content;
+  border-radius: 5px;
+  cursor: pointer;
+  @include transition(all, 0.3s, ease);
+  &:hover {
+    background-color: darken($font-color-primary, 10%);
+  }
+}
+
+.btn__full {
+  @extend .btn !optional;
+  width: 100% !important;
+}
+
+.btn__full--shadow {
+  @extend .btn__full !optional;
+  @include box-shadow(--agl-box-shadow);
+  @include transition(box-shadow, 0.3s, ease);
+}

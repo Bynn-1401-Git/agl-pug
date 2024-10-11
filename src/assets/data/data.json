@@ -1,9 +1,176 @@
 {
   "nav": [
-    { "title": "検査結果画面の解説", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
-    { "title": "主な機能", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
-    { "title": "利用シーン別ガイド", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
-    { "title": "初めてご利用の方へ", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" },
-    { "title": "FAQ", "link": "#", "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg" }
-  ]
+    {
+      "title": "検査結果画面の解説",
+      "link": "#",
+      "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg"
+    },
+    {
+      "title": "主な機能",
+      "link": "#",
+      "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg"
+    },
+    {
+      "title": "利用シーン別ガイド",
+      "link": "#",
+      "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg"
+    },
+    {
+      "title": "初めてご利用の方へ",
+      "link": "#",
+      "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg"
+    },
+    {
+      "title": "FAQ",
+      "link": "#",
+      "icon": "./assets/images/common/icons/fa-solid fa-angle-right.svg"
+    }
+  ],
+  "features": {
+    "title": "利用シーン別ガイド",
+    "description": "SALES SCOREを様々なシーンでご活用いただく方法をご紹介します。",
+    "thumbnail": "/assets/images/dashboard/thumbnail-1.svg",
+    "galleries": [
+      {
+        "title": "受検者の営業活動の特徴を 見える化したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon.svg"
+      },
+      {
+        "title": "ポテンシャルの高い人材を 採用したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon-1.svg"
+      },
+      {
+        "title": "離職率を改善したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon-2.svg"
+      },
+      {
+        "title": "成績優秀層を分析したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon-3.svg"
+      },
+      {
+        "title": "自社の特徴を理解したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon-4.svg"
+      },
+      {
+        "title": "社員のコミュニケーションを 改善したい",
+        "link": "#",
+        "icon": "/assets/images/common/icons/icon-5.svg"
+      }
+    ]
+  },
+  "reportIntro": {
+    "title": "検査結果画面の解説",
+    "description": "SALES SCOREのアウトプット項目について紹介します。",
+    "thumbnail": "/assets/images/dashboard/thumbnail-2.svg",
+    "subTitle": "適性検査のアウトプット",
+    "galleries": [
+      {
+        "title": "データサマリー",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47503.svg"
+      },
+      {
+        "title": "データ詳細",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47547.svg"
+      },
+      {
+        "title": "データ比較",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47550.svg"
+      }
+    ]
+  },
+  "reportIntro2": {
+    "title": "",
+    "description": "",
+    "thumbnail": "",
+    "subTitle": "企業傾向分析",
+    "galleries": [
+      {
+        "title": "全体比較",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47553.svg"
+      },
+      {
+        "title": "営業タイプ傾向",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47556.svg"
+      },
+      {
+        "title": "High-Low分析",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47557.svg"
+      },
+      {
+        "title": "構成比比較",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47558.svg"
+      }
+    ]
+  },
+  "reportIntro3": {
+    "title": "",
+    "description": "",
+    "thumbnail": "",
+    "subTitle": "検査結果詳細",
+    "galleries": [
+      {
+        "title": "表示される予測値",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47563.svg"
+      },
+      {
+        "title": "表示される営業タイプ",
+        "link": "#",
+        "icon": "/assets/images/dashboard/Group 47565.svg"
+      }
+    ]
+  },
+  "menuList": {
+    "title": "主な機能",
+    "description": "SALES SCOREの利用方法及び、ツールに表示される項目について紹介します。",
+    "thumbnail": "/assets/images/dashboard/thumbnail-3.png",
+    "list": [
+      {
+        "title": "管理者",
+        "items": ["・管理者の登録・編集", "・表示される管理者情報"]
+      },
+      {
+        "title": "従業員",
+        "items": ["・従業員の登録・編集", "・表示される従業員情報"]
+      },
+      {
+        "title": "応募者",
+        "items": ["・応募者の登録・編集", "・表示される応募者情報"]
+      },
+      {
+        "title": "実績データの登録",
+        "items": ["・実績の登録・編", "・分析対象範囲の指定", "・成績区分の指定"]
+      },
+      {
+        "title": "適性検査",
+        "items": [
+          "・適性検査推奨環境",
+          "・受検メールの送信",
+          "・ＵＲＬの発行",
+          "・受検者のステータス",
+          "・検査実施項目"
+        ]
+      },
+      {
+        "title": "ダッシュボード機能",
+        "items": ["・実績データ分析機能", "・運用サポート機能"]
+      },
+      {
+        "title": "契約について",
+        "items": ["・契約情報の確認", "・解約の方法"]
+      }
+    ]
+  }
 }

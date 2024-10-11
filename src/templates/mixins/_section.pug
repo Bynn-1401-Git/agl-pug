@@ -1,0 +1,86 @@
+mixin AGLSubTitle(title)
+  .sub-title__container
+    .sub-title__line
+    h3.sub-title__heading= title
+
+mixin AGLHeroTitle(title, thumbnail, description)
+  .header__thumbnail
+    img.header__image(src=path + thumbnail, alt=title)
+  .header__title
+    if title !== undefined && title !== ''
+      h2.heading= title
+    if description !== undefined && description !== ''
+      p.description= description
+
+mixin AGLSectionMenu(items)
+  .menu__container
+    .menu__header
+      if items !== undefined && items.title !== undefined && items.title !== '' && items.description !== undefined && items.description !== '' && items.thumbnail !== undefined && items.thumbnail !== ''
+        +AGLHeroTitle(items.title, items.thumbnail, items.description)
+      if items.subTitle !== undefined && items.subTitle !== ''
+        +AGLSubTitle(items.subTitle)
+    .menu__grid
+      if items.galleries !== undefined && items.galleries.length > 0
+        each item in items.galleries
+          .menu-item
+            .menu-item__thumbnail
+              img.menu-item__image(src=path + item.icon, alt=item.title)
+            .menu-item__content
+              h3.menu-item__heading= item.title
+              p.menu-item__description= item.description
+
+mixin AGLGridFourColumns(items)
+  .grid__wrapper.grid__four
+    each item in items
+      .item
+        .item__thumbnail
+          img.item__image(src=path + item.icon, alt=item.title)
+        .item__content
+          h4.item__heading= item.title
+
+mixin AGLGridThreeColumns(items)
+  .grid__wrapper.grid__three
+    each item in items
+      .item
+        .item__thumbnail
+          img.item__image(src=path + item.icon, alt=item.title)
+        .item__content
+          h3.item__heading= item.title
+
+mixin AGLGridTwoColumns(items)
+  .grid__wrapper.grid__two
+    each item in items
+      .item
+        .item__header
+          +AGLSubTitle(item.title)
+        .item__content
+          if item.items !== undefined && item.items.length > 0
+            ul.menu__list
+              each list in item.items
+                li.menu__item
+                  a.menu__link(href='#')
+                    span.menu__title= list
+
+mixin AGLSectionDashboard(items, outline=0)
+  .section__container
+    .header__wrapper
+      if items.thumbnail !== undefined && items.thumbnail !== '' && items.title !== undefined && items.title !== '' && items.description !== undefined && items.description !== ''
+        +AGLHeroTitle(items.title, items.thumbnail, items.description)
+    if items.subTitle !== undefined && items.subTitle !== ''
+      +AGLSubTitle(items.subTitle)
+    .content__wrapper
+      if items.galleries !== undefined && items.galleries.length > 0
+        case outline
+          when 1
+            +AGLGridFourColumns(items.galleries)
+          default
+            +AGLGridThreeColumns(items.galleries)
+
+mixin AGLSectionMenuList(items, outline=0)
+  .section__container
+    .header__wrapper
+      if items.thumbnail !== undefined && items.thumbnail !== '' && items.title !== undefined && items.title !== '' && items.description !== undefined && items.description !== ''
+        +AGLHeroTitle(items.title, items.thumbnail, items.description)
+    .content__wrapper
+      if items.list !== undefined && items.list.length > 0
+        +AGLGridTwoColumns(items.list)

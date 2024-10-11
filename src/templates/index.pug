@@ -1,21 +1,42 @@
-extends _layouts/_default
+extends layouts/_default
 
 block vars
   - title = 'AGL | Dashboard'
-  - description = ''
-  - keywords = ''
-  - og_title = ''
-  - url = ''
+  - description = 'AGL'
+  - keywords = 'AGL'
+  - og_title = '.'
+  - url = '.'
   - pageID = 'dashboard'
   - path = '.'
 
 block scripts
 
 block container
-  .wrapper
-    .container
-      .row
-        .col-12
-          h1 Dashboard
-          p Welcome to the dashboard
-          +NavigationList(nav)
+  .nav__wrapper.flexbox__container.flexbox__direction--row.flexbox__wrap--nowrap.flexbox__justify-content--space-between.flexbox__align-items--center
+    .nav__left
+      +AGLNavLink('トップ', '/assets/images/common/icons/fa-house.svg')
+    .nav__right
+      .flexbox__container.flexbox__direction--row.flexbox__wrap--wrap
+        +AGLNavLink('ログイン', '/assets/images/common/icons/fa-regular fa-envelope.svg',1)
+        +AGLNavLink('お問い合わせ', '/assets/images/common/icons/fa-solid fa-arrow-up-right-from-square.svg',1)
+  .search_bar__wrapper
+    form.search_bar__container.flexbox__container.flexbox__direction--row.flexbox__wrap--wrap(
+      action='#',
+      method='get',
+      autocomplete='off',
+      novalidate='novalidate')
+      .group__field
+        label.search_bar__label(for='search_input') どんな事でお困りですか？
+        .search_bar__field
+          img.search_bar__icon(src=path + '/assets/images/common/icons/fa-solid fa-magnifying-glass.svg', alt='検索')
+          input#search_bar_input.search_bar__input(type='text', placeholder='キーワードを入力')
+      .search_bar__submit
+        +AGLButton('検索', 'submit', 'search_input')
+  section.section__wrapper.features
+    +AGLSectionDashboard(features)
+  section.section__wrapper.report-intro
+    +AGLSectionDashboard(reportIntro, 1)
+    +AGLSectionDashboard(reportIntro2, 1)
+    +AGLSectionDashboard(reportIntro3,1)
+  section.section__wrapper.menu-list
+    +AGLSectionMenuList(menuList)
