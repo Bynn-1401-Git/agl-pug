@@ -1,16 +1,17 @@
-header.header
+header#my_header.header
   .header__container
-    .header__logo
-      a(href='/')
-        img(src='assets/images/common/logo/agl-logo.png', alt='AGL')
-    .header__nav
-      nav
-        ul
-          li
-            a(href='/') Home
-          li
-            a(href='/about') About
-          li
-            a(href='/services') Services
-          li
-            a(href='/contact') Contact
+    .header__left
+      .header__logo
+        a.header__logo-link(href='#', title='AGL', aria-label='AGL', rel='home', tabindex='1', target='_self')
+          img(src=path + '/assets/images/common/logo/agl-logo@2x.png', alt='AGL')
+    .header__right
+      .header__menu
+        button#menu__btn_hamburger.menu__btn(
+          type='button',
+          title='Menu',
+          aria-label='Menu',
+          tabindex='2',
+          aria-expanded='false',
+          aria-controls='menu__nav',
+          aria-haspopup='true')
+          i.fas.fa-bars

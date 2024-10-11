@@ -3,14 +3,14 @@
 // Grid variables
 $grid-columns: 12;
 $grid-gutter: 30px;
-$max-width: 1200px;
+$max-width: 1240px;
 
 // Breakpoints
 $breakpoints: (
   small: 576px,
   medium: 768px,
   large: 992px,
-  extra-large: 1200px,
+  extra-large: 1240px,
 );
 
 .grid {

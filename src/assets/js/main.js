@@ -4,6 +4,37 @@ if (typeof window !== 'undefined') {
   // This will only run in the browser.
   console.log('Hello from the browser!')
   window.addEventListener('DOMContentLoaded', () => {
-    console.log('DOM fully loaded and parsed')
+    const btnMenu = document.querySelector('#menu__btn_hamburger')
+    const menuList = document.querySelector('#menu__list')
+
+    if (!menuList || !btnMenu) {
+      console.error('Element not found')
+      return void 0
+    }
+
+    btnMenu.addEventListener('click', (even) => {
+      if (window.scrollY > 120) {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth', // Cuộn mượt
+        })
+        menuList.classList.add('open__menu')
+      } else {
+        menuList.classList.toggle('open__menu')
+      }
+    })
+
+    window.addEventListener('scroll', () => {
+      const header = document.getElementById('my_header')
+      clearTimeout(header.timeout)
+      header.timeout = setTimeout(() => {
+        if (window.scrollY > 120) {
+          header.classList.add('fixed')
+          menuList.classList.remove('open__menu')
+        } else {
+          header.classList.remove('fixed')
+        }
+      }, 100)
+    })
   })
 }

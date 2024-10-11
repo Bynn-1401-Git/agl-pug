@@ -1,20 +1,49 @@
 #dashboard {
   .wrapper--full-width {
     width: 100%;
+    padding-top: 0 !important;
+
+    @include min($breakpoint-sm) {
+      padding-top: 0 !important;
+    }
+
+    @include min($breakpoint-md) {
+      padding-top: 0 !important;
+    }
+
+    @include min($breakpoint-lg) {
+      padding-top: 20px !important;
+    }
+
+    @include min($breakpoint-xl) {
+      padding-top: 20px !important;
+    }
+
+    header.header {
+      grid-area: header;
+      background-color: var(--agl-blue-primary);
+
+      @include min($breakpoint-md) {
+        display: none;
+      }
+    }
+
     .grid__container {
-      max-width: 1200px;
+      max-width: 1240px;
       display: grid;
       height: 100%;
 
       grid-template-columns: minmax(auto, 1fr);
       grid-template-rows: auto 1fr;
       grid-template-areas:
+        'header'
         'sidebar'
         'content';
 
       @include min($breakpoint-sm) {
         grid-template-columns: minmax(auto, 1fr);
         grid-template-areas:
+          'header'
           'sidebar'
           'content';
       }
@@ -37,32 +66,38 @@
         grid-template-areas: 'sidebar content';
       }
 
-      // header.header {
-      //   grid-area: header;
-      //   background-color: var(--agl-blue-primary);
-
-      //   @include min($breakpoint-md) {
-      //     display: none;
-      //   }
-      // }
-
       aside.sidebar {
         grid-area: sidebar;
         // background-color: var(--agl-gray-dark);
         background-color: var(--agl-white);
         position: relative;
+        transition: all 0.3s ease-in-out;
+        height: 0;
+        overflow: hidden;
+
+        &.open__menu {
+          height: 100% !important;
+        }
 
         .sidebar__wrapper {
           width: 100%;
           z-index: var(--agl-z-index-9);
+
+          &.flexbox__container {
+            gap: 20px;
+            padding: 0;
+          }
+          padding-top: 20px !important;
+
+          @include min($breakpoint-sm) {
+            padding-top: 20px !important;
+          }
+
           @include min($breakpoint-md) {
+            padding-top: 20px !important;
             max-width: 220px;
             top: 1rem;
             position: fixed;
-          }
-          &.flexbox__container {
-            gap: 20px;
-            padding: 0 !important;
           }
 
           height: fit-content;
@@ -75,6 +110,23 @@
             padding: 10px 1rem;
             text-align: center;
             width: 100%;
+            display: none;
+
+            @include min($breakpoint-sm) {
+              display: none;
+            }
+
+            @include min($breakpoint-md) {
+              display: block;
+            }
+
+            @include min($breakpoint-lg) {
+              display: block;
+            }
+
+            @include min($breakpoint-xl) {
+              display: block;
+            }
 
             .logo__image {
               max-height: 54px;
@@ -192,28 +244,24 @@
         //Nav links
         .nav__wrapper {
           padding: 10px 0;
-          font-size: 12px;
+          font-size: 14px;
           margin-bottom: 10px;
           align-items: flex-start;
           // flex-direction: column;
           @include min($breakpoint-sm) {
-            font-size: 10px;
             flex-wrap: wrap;
             padding: 10px 0;
           }
 
           @include min($breakpoint-md) {
-            font-size: 12px;
             padding: 10px 20px;
           }
 
           @include min($breakpoint-lg) {
-            font-size: 14px;
             padding: 10px 20px;
           }
 
           @include min($breakpoint-xl) {
-            font-size: 14px;
             padding: 10px 20px;
           }
 
@@ -228,8 +276,10 @@
             float: right;
             .flexbox__container {
               gap: 0px;
+              flex-direction: row;
+              flex-wrap: wrap;
+              gap: 20px;
               padding: 0;
-              flex-direction: column;
 
               @include min($breakpoint-sm) {
                 flex-direction: row;
@@ -267,25 +317,22 @@
           // max-height: 90px;
           height: auto;
           margin-bottom: 30px;
+          font-size: 16px;
 
           @include min($breakpoint-sm) {
-            font-size: 10px;
             flex-wrap: wrap;
             padding: 10px 0;
           }
 
           @include min($breakpoint-md) {
-            font-size: 12px;
             padding: 10px 20px;
           }
 
           @include min($breakpoint-lg) {
-            font-size: 14px;
             padding: 10px 20px;
           }
 
           @include min($breakpoint-xl) {
-            font-size: 14px;
             padding: 10px 20px;
           }
 
@@ -344,7 +391,6 @@
                 flex-wrap: nowrap;
                 gap: 10px;
                 width: 100%;
-                font-size: 12px;
               }
 
               @include min($breakpoint-md) {
@@ -352,7 +398,7 @@
                 gap: 10px;
                 width: 82%;
                 flex-wrap: nowrap;
-                font-size: 14px;
+
                 justify-content: flex-end;
               }
 
@@ -361,7 +407,7 @@
                 gap: 10px;
                 flex-wrap: nowrap;
                 width: 82%;
-                font-size: 16px;
+
                 justify-content: flex-end;
               }
 
@@ -370,7 +416,7 @@
                 flex-wrap: nowrap;
                 gap: 10px;
                 width: 82%;
-                font-size: 16px;
+
                 justify-content: flex-end;
               }
 
